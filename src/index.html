@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Simulador de Facturas - Gloria</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-500">
+
+  <nav class="navbar">
+    <div class="brand">Facturas Gloria</div>
+    <button class="btn-close">Facturas</button>
+  </nav>
+
+  <div class="container">
+    <div class="app">
+      <form class="form">
+        <h2>Formulario</h2>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Ingrese su email">
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+  
+      <div class="table-container">
+        <h2>Tabla</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Usuario 1</td>
+              <td>usuario1@example.com</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Usuario 2</td>
+              <td>usuario2@example.com</td>
+            </tr>
+            <!-- Agrega más filas según sea necesario -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

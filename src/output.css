@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f1f5f9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020617; /* Color primario de Material UI */
+  padding: 10px;
+  color: #f8fafc;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Centra verticalmente en dispositivos pequeños */
+}
+
+.nav-list li {
+  margin-right: 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-close {
+  background-color: #dc2626; /* Color secundario de Material UI */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Agrega transición a cambios de color */
+}
+
+.btn-close:hover {
+  background-color: #b91c1c; /* Cambia el color al hacer hover */
+}
+
+/* Media query para hacer el menú responsivo en dispositivos pequeños */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    margin-top: 10px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .nav-list li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .btn-close {
+    margin-top: 10px;
+  }
+}
+
+
+
+/*  */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.app {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
+  justify-content: space-between;
+  width: 80%;
+}
+
+.form,
+.table-container {
+  flex: 1; /* Hace que ambos elementos ocupen el espacio disponible de manera equitativa */
+  margin-top: 20px;
+}
+
+.form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* Establece un ancho mínimo para evitar que el formulario sea demasiado estrecho */
+}
+
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+.table-container {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* Establece un ancho mínimo para evitar que la tabla sea demasiado estrecha */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #2196F3;
+  color: white;
+}
+
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Media query para hacer el diseño más adecuado en dispositivos pequeños */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column; /* Cambia a disposición de columna */
+  }
+
+  .form,
+  .table-container {
+    width: 100%; /* Ocupa el 100% del ancho en dispositivos pequeños */
+  }
+}
