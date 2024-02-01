@@ -1,65 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-  <title>Simulador de Facturas - Gloria</title>
-  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./output.css">
+  <title>Tu Sitio Web</title>
+ <!-- Incluye la biblioteca jsPDF de manera correcta -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 
-<body class="bg-slate-500">
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://factura123.mx/img/logo-negro.png" alt="Logo" width="100px">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Facturas</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Contenido de la página -->
+  <div class="grid-container">
+    <div class="form-container">
+      <form class="registration-form">
+        <h2>Registro</h2>
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" placeholder="Tu nombre de usuario" required>
 
-  <nav class="navbar">
-    <div class="brand">Facturas Gloria</div>
-    <button class="btn-close">Facturas</button>
-    <a href=""></a>
-  </nav>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
 
-  <div class="container">
-    <div class="app">
-      <form class="form">
-        <h2>Formulario</h2>
-        <div class="form-group">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Ingrese su email">
-        </div>
-        <button type="submit">Enviar</button>
+        <label for="gender">Género:</label>
+        <select id="gender" name="gender" required>
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <button type="button" onclick="generarPDF()">Guardar</button>
       </form>
-  
-      <div class="table-container">
-        <h2>Tabla</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Usuario 1</td>
-              <td>usuario1@example.com</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Usuario 2</td>
-              <td>usuario2@example.com</td>
-            </tr>
-            <!-- Agrega más filas según sea necesario -->
-          </tbody>
-        </table>
-      </div>
+    </div>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Columna 1</th>
+            <th>Columna 2</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Fila 1 -->
+          <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+            <td>
+              <button class="btn-view">Ver</button>
+              <button class="btn-delete">Eliminar</button>
+            </td>
+          </tr>
+
+          <!-- Puedes agregar más filas según sea necesario -->
+        </tbody>
+      </table>
     </div>
   </div>
 
+  <script>
+    function generarPDF() {
+      // Obtener datos del formulario
+      const nombre = document.getElementById('username').value;
+      const edad = document.getElementById('email').value;
+
+      // Crear un nuevo documento PDF
+      const pdf = new window.jspdf.jsPDF(); // Modificación aquí
+
+      // Agregar contenido al PDF
+      pdf.text(20, 20, 'Información del Usuario:');
+      pdf.text(20, 30, `Nombre: ${nombre}`);
+      pdf.text(20, 40, `Edad: ${edad}`);
+
+      // Guardar el PDF (puedes cambiar el nombre del archivo según tus necesidades)
+      pdf.save('informacion_usuario.pdf');
+    }
+  </script>
 
 </body>
 

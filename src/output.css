@@ -1,178 +1,164 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f1f5f9;
 }
 
-.navbar {
+header {
+  background: linear-gradient(to right, #41B883, #35495E); /* Agregamos el degradado aquí */
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #020617; /* Color primario de Material UI */
-  padding: 10px;
-  color: #f8fafc;
 }
 
-.brand {
-  font-size: 1.5rem;
-  font-weight: bold;
+.logo img {
+  max-width: 100%;
 }
 
-.nav-list {
+nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center; /* Centra verticalmente en dispositivos pequeños */
 }
 
-.nav-list li {
+nav li {
   margin-right: 20px;
 }
 
-.nav-list a {
+nav a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #fff; /* Cambia el color del texto según tus preferencias */
 }
 
-.btn-close {
-  background-color: #dc2626; /* Color secundario de Material UI */
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Agrega transición a cambios de color */
-}
-
-.btn-close:hover {
-  background-color: #b91c1c; /* Cambia el color al hacer hover */
-}
-
-/* Media query para hacer el menú responsivo en dispositivos pequeños */
+/* Hacer el menú responsivo para pantallas más pequeñas */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  header {
+      flex-direction: column;
+      align-items: flex-start;
   }
 
-  .nav-list {
-    margin-top: 10px;
-    justify-content: flex-start;
+  nav {
+      margin-top: 10px;
+  }
+
+  nav ul {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  nav li {
+      margin: 0;
+      margin-bottom: 10px;
+  }
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* FORMULARIO */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
     width: 100%;
-  }
+}
 
-  .nav-list li {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+.registration-form h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
 
-  .btn-close {
-    margin-top: 10px;
-  }
+.registration-form label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.registration-form input,
+.registration-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.registration-form button {
+    background-color: #41B883;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registration-form button:hover {
+    background-color: #35495E;
 }
 
 
-
-/*  */
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-}
-
-.app {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
-  justify-content: space-between;
-  width: 80%;
-}
-
-.form,
+/* TABLA */
 .table-container {
-  flex: 1; /* Hace que ambos elementos ocupen el espacio disponible de manera equitativa */
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.form {
-  background-color: #f5f5f5;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-width: 300px; /* Establece un ancho mínimo para evitar que el formulario sea demasiado estrecho */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
 }
 
-.form h2 {
-  margin-bottom: 20px;
+.data-table th, .data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.data-table th {
+    background-color: #41B883;
+    color: #fff;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
+.data-table tbody tr:hover {
+    background-color: #f4f4f4;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
+.btn-view, .btn-delete {
+    padding: 8px 12px;
+    margin-right: 5px;
+    background-color: #41B883;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button {
-  background-color: #2196F3;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #1565c0;
-}
-
-.table-container {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-width: 300px; /* Establece un ancho mínimo para evitar que la tabla sea demasiado estrecha */
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.table th, .table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.table th {
-  background-color: #2196F3;
-  color: white;
-}
-
-.table tbody tr:hover {
-  background-color: #f5f5f5;
-}
-
-/* Media query para hacer el diseño más adecuado en dispositivos pequeños */
-@media (max-width: 768px) {
-  .app {
-    flex-direction: column; /* Cambia a disposición de columna */
-  }
-
-  .form,
-  .table-container {
-    width: 100%; /* Ocupa el 100% del ancho en dispositivos pequeños */
-  }
+.btn-view:hover, .btn-delete:hover {
+    background-color: #35495E;
 }
